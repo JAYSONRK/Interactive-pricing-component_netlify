@@ -27,12 +27,12 @@ const Card = () => {
     <div className="card">
         <div className="header">
             <h6>{outputPage.view === 1000 ? 1 : outputPage.view }{outputPage.view === 1000 ? 'm' : 'k'} Pageviews</h6>
-            <h6 className="priceA"><span>${checkbox ? discount : outputPage.price}</span>&nbsp;&nbsp;/ month</h6>
+            <h6 className="priceA"><span>${checkbox ? discount : outputPage.price}.00</span>&nbsp;&nbsp;/ month</h6>
         </div>    
         <Slider
             pageOutput = {pageOutput}
         />
-        <h6 className="priceB"><span>${checkbox ? discount : outputPage.price}</span>&nbsp;&nbsp;/ month</h6>
+        <h6 className="priceB"><span>${checkbox ? discount : outputPage.price}.00</span>&nbsp;&nbsp;/ month</h6>
         <div className="billing">
             <div className="monthly">
                 <div className="monthly-bill">
