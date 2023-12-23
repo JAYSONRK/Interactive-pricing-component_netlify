@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+}
+
+:root {
+/* ### Primary */
+--Soft-Cyan : hsl(174, 77%, 80%);
+--Strong-Cyan : hsl(174, 86%, 45%);
+--Light-Grayish-Red : hsl(14, 92%, 95%);
+--Light-Red : hsl(15, 100%, 70%);
+--Pale-Blue : hsl(226, 100%, 87%);
+/* ### Neutral */
+--White : hsl(0, 0%, 100%);
+--Very-Pale-Blue : hsl(228, 63%, 97%);
+--Light-Grayish-Blue1 : hsl(224, 65%, 95%);
+--Light-Grayish-Blue2 : hsl(223, 50%, 87%);
+--Grayish-Blue : hsl(225, 20%, 60%);
+--Dark-Desaturated-Blue : hsl(227, 35%, 25%);
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Very-Pale-Blue);
+  background-image: url('images/pattern-circles.svg');
+  background-repeat: no-repeat;
+  background-position: right 50% top 5%;
+  text-align: center;
+}
+
+.page {
+  margin: 4rem 0;
+}
+
+.page h2 {
+  font-size: 1.35rem;;
+}
+
+.page p {
+  color: var(--Grayish-Blue);
+  font-size: 0.85rem;
+  padding: 1rem 6.5rem;
+}
+
+.card {
+  background-color: var(--White);
+  margin: 3rem 1.5rem;
+  position: relative;
+  padding: 2rem 1rem;
+  border-radius: 0.5rem;;
+}
+
+.header h6 {
+  text-transform: uppercase;
+  color: var(--Grayish-Blue);
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+
+.priceB  {
+  color: var(--Grayish-Blue);
+  font-size: 0.9rem;
+  padding-top: 5rem;
+}
+
+.priceB span {
+  color: black;
+  font-size: 2rem;;
+}
+
+.slider-ranger {
+  position: relative;
+}
+
+.billing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 0;
+}
+
+.billing p {
+  padding: 0 0.4rem 0 0;
+  font-size: 0.85rem;
+}
+
+.monthly p {
+  padding-right: 1.3rem
+}
+
+.monthly {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.yearly {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle {
+  margin-right: 1rem;
+}
+
+.year-button button {
+  border: none;
+  color: var(--Light-Red);
+  background-color: var(--Light-Grayish-Red) ;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  padding: 0.2rem;
+}
+
+.footer ul {
+ padding-top: 1rem;
+}
+
+.footer li {
+  list-style-type: none;
+  font-size: 0.85rem;
+  color: var(--Grayish-Blue);
+  padding: 0.5rem 0;
+}
+
+.footer button {
+  width: 12rem;
+  height: 2.8rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--Dark-Desaturated-Blue);
+  color: var(--White);
+  font-size: 0.85rem;
+  margin: 2rem 0;
+}
+
+.footer button:hover {
+  cursor: pointer;
+}
+
+/* RANGE SLIDER */
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  /* background-color: aqua; */
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+  /* background-color: aqua; */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  background: url('images/icon-slider.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  background-color: hsl(174, 89%, 36%);
+  border-radius: 50%;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 20px 10px hsl(174, 89%, 36%);
+}
+
+.slider::-moz-range-thumb {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  background: url('images/icon-slider.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  background-color: hsl(174, 89%, 36%);
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb:hover {
+  box-shadow: 0 0 20px 10px hsl(174, 71%, 66%);
+}
+
+/* customize */
+#myRange {
+  height: 0.6rem;
+  margin: 2.5rem 1rem;
+  position: absolute;
+  left: -5%;
+  width:100%;
+  border-radius: 1rem;
+  background-color: var(--Light-Grayish-Blue1);
+}
+
+/* TOGGLE SWITCH */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  left: 3px;
+  bottom: 5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.input:checked + .slider {
+  background-color: var(--Strong-Cyan);
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px var(--Strong-Cyan);
+}
+
+.input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 2rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.priceA, .btnA {
+  display: none;
+}
+
+
+@media (min-width: 640px) {
+  .priceB, .btnB {
+    display: none;
+  }
+  .priceA, .btnA {
+    display: block;
+  }
+
+  .page {
+    margin: 0;
+  }
+
+  .page h2 {
+    font-size: 2rem;;
+  }
+
+  .page p {
+    font-size: 1rem;
+  }
+
+  .card {
+    margin: 6rem 1.5rem;
+    position: relative;
+    padding: 3rem;
+    border-radius: 1rem;
+    width: 600px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header h6 {
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .priceA  {
+    color: var(--Grayish-Blue);
+    font-size: 1.5rem;
+  }
+  
+  .priceA span {
+    color: black;
+    font-size: 2.5rem;
+  }
+
+  .billing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6.5rem 0 2rem 6.5rem;
+  }
+  
+  .billing p {
+    padding: 0 1rem 0 0;
+    font-size: 1rem;
+  }
+  
+  .year-button button {
+    border-radius: 1.2rem;
+    font-size: 0.7rem;
+    padding: 0.3rem;
+  }
+  
+  .footer ul {
+    padding-top: 1rem;
+   }
+   
+   .footer li {
+     list-style-type: none;
+     font-size: 0.85rem;
+     color: var(--Grayish-Blue);
+     padding: 0.5rem 0;
+   }
+   
+   .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+   .footer button {
+     font-size: 1rem;
+     margin: 0;
+   }
+
+   .footer li {
+    font-size: 1rem;
+    padding: 0.7rem 0;
+    text-align: left;
+  }
+  
+   
+}
